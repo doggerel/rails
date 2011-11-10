@@ -1,0 +1,12 @@
+<%=form_for @micropost do |f|%>
+  <%=render 'partials/error', :object =>f.object%>
+  <div class="field">
+    <%=f.text_area :content , :id=>"content"%>
+  </div>
+  <div class="actions">
+    <%=f.submit "Submit"%>
+  </div>
+    <div id="count">
+      chracters remaining remaining
+    </div>
+<%end%>

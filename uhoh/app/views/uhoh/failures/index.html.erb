@@ -1,0 +1,14 @@
+<h1>Failures</h1>
+<div class="slide">
+  slide
+  <ul class="list-holder">
+    <% @failures.each do |f| %>
+      <li class="<%= cycle("even","odd") %>">
+        <%= f.message %>
+      </li>
+    <%end %>
+  </ul>
+</div>
+<p>
+  <%= link_to "Simulate Failures",main_app.simulate_failure_path %>
+</p>

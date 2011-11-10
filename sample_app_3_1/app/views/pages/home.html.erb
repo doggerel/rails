@@ -1,0 +1,17 @@
+<title>Ruby on Rails Tutorial Sample App | Home</title>
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Sample App</h1>
+   <%if signed_in?%>
+     <%=render "signed_in"%>
+     <%=render 'shared/feed'%>
+  <%else%>
+    <%=render "not_signed_in"%>
+  <%end%>
+
+  </body>
+</html>
+  

@@ -1,0 +1,20 @@
+======Command line interface==================
+pry -r ./config/enviroment
+User.count
+cd User ++++++assuming of course a user model
+pry > [self] will list columns
+=========change into the directory of the record then you
+can run columns ie: name will yield the column value
+ =======pry > nesting will indicate how deep you are in
+ ================ls -h
+    -m, --methods        Show public methods defined on the Object (default)
+    -M, --module         Show methods defined in a Module or Class
+    -p, --ppp            Show public, protected (in yellow) and private (in green) methods
+    -q, --quiet          Show only methods defined on object.singleton_class and object.class
+    -v, --verbose        Show methods and constants on all super-classes (ignores Pry.config.ls.ceiling)
+    -g, --globals        Show global variables, including those builtin to Ruby (in cyan)
+    -l, --locals         Show locals, including those provided by Pry (in red)
+    -c, --constants      Show constants, highlighting classes (in blue), and exceptions (in purple)
+    -i, --ivars          Show instance variables (in blue) and class variables (in bright blue)
+    -G, --grep           Filter output by regular expression
+    -h, --help 

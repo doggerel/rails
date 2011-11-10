@@ -1,0 +1,12 @@
+<title>
+  Chat
+</title>
+<div id="new_message">
+</div>
+<div id="chat">
+  <%= render @message %>
+</div>
+<%=form_for Message.new, :remote =>true do |f|%>
+  <%= f.text_field :message %>
+  <%= f.submit "Send" %>
+<% end%>

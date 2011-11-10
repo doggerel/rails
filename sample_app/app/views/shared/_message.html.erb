@@ -1,0 +1,5 @@
+<li>
+  <%= message.message%>
+  <span><a href=<%= user_path(message.user) %>><%= "@#{message.user.handle}" %><span><%= gravatar_for(message.user, :size=>15)%></span></a>
+  </span>
+</li>

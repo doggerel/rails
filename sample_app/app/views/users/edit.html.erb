@@ -1,0 +1,9 @@
+<%=form_for(@user) do |f|%>
+  <%=render 'partials/error', :object => f.object%>
+  <%=render 'fields', :f => f%>
+  <div class="actions">
+    <%=f.submit "edit"%>
+<%= gravatar_for @user %>
+<a href="http://gravatar.com/emails" target="_blank"> change</a>
+</div>
+<%end%>

@@ -1,0 +1,77 @@
+Configure Global User
++++++++++
+
+git config --global user.name "Your Name"
+git config --global user.email youremail@example.com
+
+git init 
+git add . 
+git status
+git log
+git checkout -f
+git remote add origin git@github.com:<username>/first_app.git
+git push origin master
+git branch <new branch>
+
+Checkout a Branch
+++++++++++
+
+git checkout  modify-README
+Switched to a new branch 'modify-README'
+list
+
+Commit changes log revisions
++++++++++++++
+
+git commit -a -m "Improved the README file"
+the -a flag updates all changes
+
+Merge results into Master
+++++++++++
+
+git checkout master
+git merge modify -README
+
+
+git branch tidy up
++++++++
+
+git branch -a -l(list)
+git branch -d modify-README
+
+ git branch -D topic-branch
+ 
+Unlike the -d flag, the -D flag will delete the branch even though we haven’t merged in the changes.
+
+
+push changes to GitHub
++++++++++
+
+git push
+
+
+heroku
++++
+
+heroku keys:add
+fredhudson@sympatico.ca
+vgn-fs550
+heroku create
+git push heroku master
+heroku rake db:migrate
+heroku db:push
+
+THROUGHOUT DEVELOPMENT DO THIS
+=================================
+===================================
+
+git push 
+git push heroku
+
+create and checkout new branch
+==============================
+git checkout -b <new branch>
+
+git update-index filename
+
+

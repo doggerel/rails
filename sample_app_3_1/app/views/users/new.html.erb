@@ -1,0 +1,10 @@
+<div class="users_new round">
+<%=form_for(@user) do |f| %>
+<%=render 'partials/error', :object => f.object%>
+<%=render 'fields', :f => f%>
+  <div class="actions">
+    <%=f.submit "Sign up"%>
+  </div>
+<%end%>
+</div>
+

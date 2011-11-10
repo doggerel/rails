@@ -1,0 +1,5 @@
+<%=will_paginate%>
+<%@microposts.each do ||post%>
+  <%=wrap(post.content)%>
+<%end%>
+<%=will_paginate>

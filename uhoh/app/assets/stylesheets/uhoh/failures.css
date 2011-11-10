@@ -1,0 +1,15 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+
+*/
+.odd{
+  background: #ccc;
+}
+.even{
+  background: #ddd;
+}
+  ul.list-holder{
+    list-style-type: none;
+    width: 400px;
+    }

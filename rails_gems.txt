@@ -1,0 +1,19 @@
+#===========Run tasks whenever gem=========
+wheneverize . #which creates whenever startup up config ./config/schedule.rb
+whenever --update-crontab store
+######################Create rails engine######################
+rails plugin new uhoh --mountable
+
+####================Add pry to rails console
+#file to add it to
+config/environments/development.rb
+  MyApp::Application.configure do
+        silence_warnings do
+            begin
+                require 'pry'
+                IRB = Pry
+            rescue LoadError
+            end
+        end
+      end
+      

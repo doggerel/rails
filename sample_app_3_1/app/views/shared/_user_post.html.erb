@@ -1,0 +1,14 @@
+
+     <li class ="<%=cycle("cycle_even","cycle_odd")%> round">
+     <span class="time_updated">
+       &nbsp <%=gravatar_for(user_post.user)%>
+     </span>
+     <%=wrap(user_post.content)%>
+     <br>
+     <span class="time_updated  middle%>">
+        posted <%=time_ago_in_words(user_post.created_at)%> ago!
+     </span>
+     <span class="time_updated middle">
+         &nbsp<%=link_to user_post.user.name, user%>
+     </span>
+  </li>

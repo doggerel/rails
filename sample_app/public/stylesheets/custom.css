@@ -1,0 +1,347 @@
+/* line 1, ../../sass/custom.sass */
+.container {
+  width: 710px;
+}
+
+/* line 5, ../../sass/custom.sass */
+body {
+  background: #ccffff;
+}
+
+/* line 9, ../../sass/custom.sass */
+header {
+  padding-top: 20px;
+}
+
+/* line 13, ../../sass/custom.sass */
+header img {
+  padding: 1em;
+  background: white;
+}
+
+/* line 18, ../../sass/custom.sass */
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: white;
+}
+
+/* line 25, ../../sass/custom.sass */
+section h1 {
+  font-size: 200%;
+}
+
+/* Links */
+/* line 31, ../../sass/custom.sass */
+a {
+  color: #0099cc;
+  text-decoration: none;
+}
+
+/* line 36, ../../sass/custom.sass */
+a:hover {
+  color: #006699;
+  text-decoration: underline;
+}
+
+/* line 41, ../../sass/custom.sass */
+a:visited {
+  color: #006699;
+  float: right;
+}
+
+/* line 47, ../../sass/custom.sass */
+nav {
+  background-color: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+  float: right;
+}
+
+/* line 54, ../../sass/custom.sass */
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 58, ../../sass/custom.sass */
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+/* line 63, ../../sass/custom.sass */
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+/* line 67, ../../sass/custom.sass */
+nav ul li a:visited {
+  color: #0099cc;
+}
+
+/* line 71, ../../sass/custom.sass */
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* line 74, ../../sass/custom.sass */
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: white;
+  background: #006400;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* line 86, ../../sass/custom.sass */
+.round {
+  -moz-border-radius: 10p;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* line 91, ../../sass/custom.sass */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 99, ../../sass/custom.sass */
+footer nav {
+  float: none;
+}
+
+/* line 102, ../../sass/custom.sass */
+.users_new {
+  background: yellow;
+  margin-bottom: 25px;
+  padding: 20px;
+}
+
+/* line 106, ../../sass/custom.sass */
+table.profile {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* line 109, ../../sass/custom.sass */
+td.main {
+  width: 70%;
+  padding: 1em;
+}
+
+/* line 112, ../../sass/custom.sass */
+td.sidebar {
+  width: 30%;
+  padding: 1em;
+  vertical-align: top;
+  background: #ffffcc;
+  border: black;
+}
+
+/* line 118, ../../sass/custom.sass */
+.profile img.gravatar {
+  border: 1px solid #999999;
+  margin-bottom: -15px;
+}
+/* line 122, ../../sass/custom.sass */
+.profile img.gravatar div.field, .profile img.gravatar div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 124, ../../sass/custom.sass */
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 129, ../../sass/custom.sass */
+.field_with_errors label {
+  color: white;
+}
+
+/* line 131, ../../sass/custom.sass */
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+/* line 138, ../../sass/custom.sass */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 5px;
+  font-size: 12px;
+}
+
+/* line 144, ../../sass/custom.sass */
+#error_explanation p {
+  color: #333333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+/* line 148, ../../sass/custom.sass */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 151, ../../sass/custom.sass */
+ul.users {
+  margin-top: 1em;
+}
+
+/* line 154, ../../sass/custom.sass */
+.users li {
+  list-style: none;
+}
+
+/* line 156, ../../sass/custom.sass */
+h1.micropost {
+  margin-bottom: 0.3em;
+}
+
+/* line 159, ../../sass/custom.sass */
+table.microposts {
+  margin-top: 1em;
+}
+
+/* line 162, ../../sass/custom.sass */
+table.microposts tr {
+  height: 70px;
+}
+
+/* line 164, ../../sass/custom.sass */
+table.microposts tr td.gravatar {
+  border-top: 1px solid #cccccc;
+  vertical-align: top;
+}
+
+/* line 167, ../../sass/custom.sass */
+table.microposts tr td.micropost span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666666;
+}
+
+/* line 171, ../../sass/custom.sass */
+div.user_info img {
+  padding-right: 0.1em;
+}
+
+/* line 173, ../../sass/custom.sass */
+div user_info span.user_name {
+  position: absolute;
+}
+
+/* line 175, ../../sass/custom.sass */
+div.user_info span.microposts {
+  font-size: 80%;
+}
+
+/* line 177, ../../sass/custom.sass */
+form.new_micropost {
+  margin-bottom: 2em;
+}
+
+/* line 179, ../../sass/custom.sass */
+form.new_micropost textarea {
+  height: 4em;
+  margin-bottom: 0;
+}
+
+/* line 182, ../../sass/custom.sass */
+.nested_microposts li {
+  list-style-type: none;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+/* line 186, ../../sass/custom.sass */
+.time_updated {
+  font-size: 0.8em;
+  color: #cccccc;
+  opacity: 0.8;
+}
+
+/* line 190, ../../sass/custom.sass */
+.cycle_odd {
+  background: #eaf7fb;
+  color: #111111;
+  opacity: 0.95;
+}
+
+/* line 194, ../../sass/custom.sass */
+.cycle_even {
+  background: white;
+}
+
+/* line 196, ../../sass/custom.sass */
+.middle {
+  margin: 0 auto;
+}
+
+/* line 201, ../../sass/custom.sass */
+.divider {
+  border-top: 1px #cccccc solid;
+  padding-top: 8px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+/* line 206, ../../sass/custom.sass */
+.user-name {
+  font-weight: bold;
+}
+
+/* line 208, ../../sass/custom.sass */
+.messages {
+  font-size: 0.8em;
+  color: #555599;
+}
+
+/* line 211, ../../sass/custom.sass */
+.messages ul {
+  margin-top: 8px;
+}
+
+/* line 214, ../../sass/custom.sass */
+.messages ul li {
+  list-style-type: none;
+  text-align: left;
+}
+
+/* line 217, ../../sass/custom.sass */
+.messages span {
+  color: #555566;
+}
+
+/* line 219, ../../sass/custom.sass */
+.messages span span {
+  padding-left: 4px;
+}
+
+/* line 221, ../../sass/custom.sass */
+.description {
+  background: #cccccc;
+}

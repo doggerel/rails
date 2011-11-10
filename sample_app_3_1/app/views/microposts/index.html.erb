@@ -1,0 +1,8 @@
+<%=will_paginate%>
+<ul class="nested_microposts">
+  <%= render :partial => 'shared/user_post',:collection =>@microposts, 
+    :spacer_template => 'shared/divider', 
+    :locals => {:user=>@user} %>
+</ul>
+<%=will_paginate%>
+

@@ -1,0 +1,216 @@
+create a rails app
+++++++++
+
+with jquery
+-------------------
+rails new sample_app -J
+rails g jquery:install
+add to config/application.rb
+    config.action_view.javascript_expansions[:defaults] = %w()
+
+
+rails 3 scaffold
+++++++++
+rails generate scaffold Micropost name:string whatever:datatype
+
+roll back rake task
++++++++
+ 
+rake db:migrate VERSION={version number}
+
+created a script db_rollback.rake in 
+~/.vimprojects/sampleap/lib/tasks/db_rollback.rack
+rake db:rollback executes the script
+
+
+column index
++++++++
+allows you t retrieve all the data referred to a 
+certain colum ie; user_id
+
+
+
+create a model
+++++++++
+
+rails generate  model {model name} {column name} :string user_id:integer
+
+without test
+----------
+rails new sample_app -T
+
+generate integration test
++++++++++++++++++++
+goes in request directory?
+---------------
+
+rails generate integration_test friendly_forwarding
+
+
+
+create tests controller helper routes table
++++++++++++++++++++++++
+
+rails g resource Comment name:string body:text
+
+start server
+++++
+rails s 
+
+++++++++++++++++
+uniqueness at database level
+rails generate migration add_email_uniqueness_index
+
+ edit gem file 
+ bundle install
+ rails generate integration_test layout_links
+annotate gem
++++
+annotate
+tail -f log/development.log
+
+
+add table column
++++++++++
+ie: salt column to table users
+rails generate migration add_column_to_users salt:string
+rake db:migrate
+rake db:test:prepare
+
+jquery
+--------------------
+git submodule add git://github.com/rails/jquery-ujs.git public/javascripts/jquery-ujs
+git submodule init
+git submodule update
+
+into layout file
+++++++++
+javascript_include :defaults
+
+add below to config/application.rb
+++++++++++++
+config.action_view.javascript_expansions[:defaults] = ['jquery-1.4.2', 'jquery-ujs/src/rails']
+
+create tasks file
++++++++++++
+ file resides in  lib/tasks (give in a name)
+ie ~/.vimprojects/lib/tasks/sample_data.rake
+install faker gem  in Gemfile
+ 
+ rake db:populate
+
+compass initialization
+++++++++++++
+
+inside app directory
+---------
+ compass --rails blueprint
+ compass init inside app directory
+ compass w <to start compass>
+ 
+ tail development.log
+ ++++++++++++++
+ tail -f log/development.log
+
+console
++++
+user.error_full_messages
+
+*************************************
+*************************************
+**enforce uniqueness at database level **
+*************************************
+*************************************
+*************************************
+
+rails generate migration add_email_uniqueness_index
+
+++++++++++++++++++++++++++++++++++++++++++++
+
+DEBUG RAILS DEVELOPMENT
++++++++++++++
++++++
+
+<%= debug(params) if Rails.env.development? %>
+
+
+START SERVER IN DIFFERENT ENVIRONMENT
+*******************************
+rails server --environment production
+
+
+
+belongs_to has_many methods
+++++++++++++
+
+micropost.user	Return the User object associated with the micropost.
+user.microposts	Return an array of the user’s microposts.
+user.microposts.create(arg)	Create a micropost (user_id = user.id).
+user.microposts.create!(arg)	Create a micropost (exception on failure).
+user.microposts.build(arg)	Return a new Micropost object (user_id = user.id).
+
+##################################33
+>> [1, 2, 3, 4].map { |i| i.to_s }
+=> ["1", "2", "3", "4"]
+
+THIS IS A SHORT HAND FOR THE ABOVE
++++++++++++
+>> [1, 2, 3, 4].map(&:to_s)
+=> ["1", "2", "3", "4"]
+##########################
+
+  %(SELECT followed_id FROM relationships
+    WHERE follower_id = :user_id)
+You can think of %() as equivalent to double quotes, but capable of making multiline strings. (If you need a way to produce a multiline string without leading whitespace, do a Google search for “ruby here document”.) Since %() supports string interpolation, it is particularly useful when you need to put double quotes in a string and interpolate at the same time. For example, the code
+
+NIFTY-GENERATOR
+++++++++++
+ 
+
+
+ rails g nifty:scaffold stock_display  name:string symbol:index price:float show --haml --ajaxify 
+get jquery
++++++
+
+
+ curl -L http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js > \
+public/javascripts/jquery.js
+
+curl -L http://github.com/rails/jquery-ujs/raw/master/src/rails.js > \
+public/javascripts/rails.js
+SUSPENDERS
+=========================
+===========
+suspenders rails project
+gem install suspenders
+ +++++++++++++++++++++++++++BUNDLER+++++++++++++++++++++++++++++++++++++++++++++
+ bundle  update rebuild gems from scratch
+=================+++++++++++ADD uniqueness_to_column++++++++++++++++++
+==============================================================
+command line 
+------------------
+rails g migration add_email_uniqueness_index
+
+db/migration
+--------
+
+class AddEmailUniquenessIndex < ActiveRecord::Migration
+  def self.up
+    add_index :users, :email, :unique => true
+  end
+
+  def self.down
+    remove_index :users, :email
+  end
+end
+
+RESET THE DATABASE
+=======================
+rake db:reset
+RESET THE DATABASE
+
+
+ruby respond_to? method
+------------
+
+determines if an object has a give attribute

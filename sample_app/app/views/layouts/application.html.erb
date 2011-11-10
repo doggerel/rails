@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= auto_discovery_link_tag(:rss, "http://localhost:3000") %>
+
+    <title><%= title %></title>
+    <%=render 'layouts/stylesheets'%>
+    <%=javascript_include_tag :defaults%>
+    <%=javascript_include_tag "jquery.tokeninput"%>
+     <%= csrf_meta_tag %>
+ 
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]--> 
+  <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/blueprint/ie' %><![endif]-->
+</head>
+<body>
+  <div class="container">
+    <%= render 'layouts/header' %>
+    <section class="round">
+    <% flash.each do |key, value|%>
+    <div class="flash <%=key%>"><%=value%></div>
+    <%end%>
+    <%= render 'shared/search' %>
+    <%= yield %>
+    </section>
+    <%= render 'layouts/footer'%>
+    <%=debug(params) if Rails.env.development?%>
+  </div>
+
+
+</body>
+</html>

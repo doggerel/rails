@@ -1,0 +1,8 @@
+<%@status = current_user.notification_status%>
+<div id="flash">
+<%if current_user.notify?  %>
+  <%=link_to @status, emailoption_path, :remote => true%>
+<%else %>
+  <%=link_to @status, emailoption_path, :remote => true%>
+<%end %>
+</div>
