@@ -2,9 +2,9 @@
   Chat
 </title>
 <ul id="chat">
-  <%=render @message%>
+  <li><%=render @messages%></li>
 </ul>
-<%=form_for Message.new, :remote =>true do |f|%>
+<%=form_for Message.new, :html=>{:id => 'new_message'},:remote =>true do |f|%>
   <%= f.text_field :message %>
   <%= f.submit "Send" %>
 

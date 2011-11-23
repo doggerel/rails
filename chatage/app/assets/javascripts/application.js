@@ -7,12 +7,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$(function(){
-  var faye = new Faye.Client('http://localhost:9292/faye');
-  })
-$(function(){
-  var faye = new Faye.Client('http://localhost:9292/faye');
-  faye.subscribe('/messages/new', function(data){
-    alert(data);
-  })
-})
+//*
+//$(function(){
+//  var faye = new Faye.Client('http://localhost:9292/faye');
+//  faye.subscribe('/messages/new', function(data){
+ //   eval(data);
+//  });
+//});
+

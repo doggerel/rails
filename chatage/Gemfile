@@ -5,6 +5,7 @@ gem 'nifty-generators'
 gem 'faye'
 gem 'pry'
 gem 'wirble'
+gem 'pusher'
 
 
 # Bundle edge Rails instead:

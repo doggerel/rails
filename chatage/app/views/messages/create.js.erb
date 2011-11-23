@@ -1,5 +1,3 @@
-<%broadcast "messages/new" do %>
-  $("#chat").html("<%=escape_javascript(render(@messages))%>")
-<%end %>
+  $("#chat").append("<%=escape_javascript render(@message)%>");
 $("#new_message")[0].reset();
 
