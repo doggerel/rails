@@ -1,0 +1,40 @@
+
+$user_table_row_color_odd: #99cccc;
+$user_table_row_color_even:  #ccffff;
+$user_table_font_color:  #111;
+$user_table_opacity: .60;
+table{
+  margin : 0 auto;
+  border: 1px #ccc solid;
+}
+.users{
+  color: $user_table_font_color;
+}
+.users  td{
+  opacity: $user_table_opacity;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  vertical-align: middle;
+}
+.fields{
+  margin :8px;
+  padding-top:20px;
+  list-style-type:none
+}
+.fields > .field{
+  margin: 8px;
+}
+
+
+.odd{
+  background : $user_table_row_color_odd;
+}
+.even{
+  background: $user_table_row_color_even;
+}
+$main-background-color: #66ffff;
+ #main-content{
+   width:600px;
+   background: $main-background-color;
+   margin: 0 auto;
+ }

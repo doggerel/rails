@@ -1,4 +1,4 @@
-= simple_form_for @user do |form|
+= simple_form_for @user do |f|
 
   -if @user.errors.any?
     #errorExplanation
@@ -6,7 +6,11 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg  
-
-
+  %ul.fields    
+    %li.field= f.input :name
+    %li.field= f.input :email
+    %li.field= f.input :handle
+    %li.field= f.input :password
+    %li.field= f.input :password_confirmation
   .actions
-    = form.button :submit
+    = f.button :submit

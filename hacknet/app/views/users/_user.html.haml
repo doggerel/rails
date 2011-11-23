@@ -1,0 +1,9 @@
+%tr.users{:class=>cycle("even","odd")}
+  %td= user.id
+  %td= user.name
+  %td= user.handle
+  %td= user.email 
+  &nbsp&nbsp&nbsp
+  %td= link_to 'Show', user
+  %td= link_to 'Edit', edit_user_path(user)
+  %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
