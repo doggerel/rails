@@ -1,11 +1,16 @@
 Hacknet::Application.routes.draw do
-  get "sessions/new"
+  get "posts/new"
 
-  get "sessions/create"
+  get "posts/show"
 
-  get "sessions/destroy"
+  get "posts/index"
+
+  get "posts/update"
+
+  get "posts/destroy"
 
   resources :users
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -15,7 +20,7 @@ Hacknet::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+     match 'sessions/new' => 'sessions#new', :as => :signin
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):

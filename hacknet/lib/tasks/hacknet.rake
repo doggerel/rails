@@ -4,6 +4,7 @@ namespace :db do
     task :populate => :environment do
       Rake::Task['db:reset'].invoke
       make_users
+      make_posts
     end
 end
 
@@ -12,24 +13,27 @@ end
                      :email => 
                       "gritty@sympatico.ca",
                      :handle => "grit",
-                     :name => "Fred Hudson"
+                     :name => "Fred Hudson",
+                     :password => "password"
                     )
                 
       99.times do |n|
         name = Faker::Name.name
         email = "example-#{n+1}@railstutorial.org"
         handle = "grit-#{n+1}"
+        password = "foobar"
         User.create!(:name =>name,
                      :email => email, 
+                     :password =>password,
                      :handle  => handle
         )
       end
     end
-    def make_microposts
+    def make_posts
       User.all(:limit => 50).each do |user|
         99.times do |n| 
-         content = Faker::Lorem.sentence(5)
-        user.microposts.create!(:content=>content)
+         post = Faker::Lorem.sentence(5)
+        user.posts.create!(:post=>post)
        end
       end
     end

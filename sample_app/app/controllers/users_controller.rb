@@ -36,7 +36,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      
       sign_in @user
       current_user.send_email_confirmation unless current_user.aasm_state != "unconfirmed"
       flash[:success] = "Welcome to the sample App!"

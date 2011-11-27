@@ -207,8 +207,15 @@ end
 RESET THE DATABASE
 =======================
 rake db:reset
-RESET THE DATABASE
 
+
+
+
+Plugins
+=================
++++++++++++++++++++++++
+rails plugin install git://github/doggerel/sample_app
+git submodule add http://github.com/rails/exception_notification.git vendor/plugins/exception_notification 
 
 ruby respond_to? method
 ------------

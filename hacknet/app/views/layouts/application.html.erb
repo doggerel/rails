@@ -2,13 +2,25 @@
 <html>
 <head>
   <title>Hacknet</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id=main-content>
-  <%= yield %>
+  <div class="container">
+    <div class="span-24 large header">
+      fred
+    </div>
+    <div class="span-14  quiet main-content"> 
+
+      <%= yield %>
+      <%= flash_messages %>
+    </div>
+    <div class="span-9  quiet last sidebar">
+      fred
+    </div>
+    <div class="span-24 header footer quiet">
+    </div>
 </div>
 
 </body>

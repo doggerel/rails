@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 gem 'will_paginate', :git => 'git@github.com:bridgeutopia/will_paginate.git', :branch => 'rails3'  
+gem 'blueprint-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -9,12 +10,15 @@ gem 'will_paginate', :git => 'git@github.com:bridgeutopia/will_paginate.git', :b
 gem 'sqlite3'
 gem 'faker'
 gem 'wirble'
+gem 'gravatar_image_tag', '1.0.0.pre2'
+
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
+  gem 'blueprint-rails'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end

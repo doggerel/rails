@@ -1,17 +1,28 @@
 
-$user_table_row_color_odd: #99cccc;
-$user_table_row_color_even:  #ccffff;
-$user_table_font_color:  #111;
-$user_table_opacity: .60;
+$user-table-row-color-odd: #99cccc;
+$user-table-row-color-even:  #ccffff;
+$user-table-font-color:  #111;
+$user-table-opacity: .60;
+$application-header-background-color:#CCC;
+@mixin list-position{
+  margin: 0 auto;
+  padding: 10px;
+  list-style-type:none
+}
+@mixin rounded{
+  -moz-border-radius: 10p;
+  -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
 table{
   margin : 0 auto;
   border: 1px #ccc solid;
 }
 .users{
-  color: $user_table_font_color;
+  color: $user-table-font-color;
 }
 .users  td{
-  opacity: $user_table_opacity;
+  opacity: $user-table-opacity;
   padding-bottom: 4px;
   padding-top: 4px;
   vertical-align: middle;
@@ -24,17 +35,54 @@ table{
 .fields > .field{
   margin: 8px;
 }
-
+.post{
+  margin: 0 auto;
+}
+.post li{
+  @include  list-position;
+}
+@mixin application-border{
+  border: 1px black solid;
+}
 
 .odd{
-  background : $user_table_row_color_odd;
+  background : $user-table-row-color-odd;
 }
 .even{
-  background: $user_table_row_color_even;
+  background: $user-table-row-color-even;
 }
 $main-background-color: #66ffff;
  #main-content{
+   min-height:600px;
    width:600px;
+   float:right;
    background: $main-background-color;
    margin: 0 auto;
  }
+ .main-content{
+   @include rounded;
+   @include application-border;
+    opacity: .9;
+    margin-bottom: 1em; 
+ }
+ .sidebar {
+    background: $user-table-row-color-odd;
+    border: 1px black solid;
+    @include rounded;
+    padding-left:10px;
+    min-height:500px;
+    margin-left:2em;
+ }
+ .header{
+   /*background: $application-header-background-color;*/
+   background:url('/assets/grid.png');
+
+   text-align: center;
+   @include application-border;
+   @include rounded;
+   padding: 3em;
+   margin-bottom: 1em;
+ }
+ .footer{
+ margin-top:2em;
+}
