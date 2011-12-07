@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, :only=>[:new,:create]
-  before_filter :authenticate, :except=>[:show,:new,:create]
+  #before_filter :signed_in_user, :only=>[:new,:create]
+  #before_filter :authenticate, :except=>[:show,:new,:create]
   # GET /users
   # GET /users.json
   respond_to :rss, :html, :haml, :js, :json, :xml
@@ -79,6 +79,18 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
+def search=(name)
+     user= User.find_by_name(name)
+     if user           
+       self.user_id = user.id
+     else              
+       errors[:user_name] << "Invalid name entered"
+     end               
+   end                 
+                       
+   def search       
+     User.find(_id).name if user_id
+   end      
   private
   def signed_in_user
     redirect_to root_path unless !signed_in?

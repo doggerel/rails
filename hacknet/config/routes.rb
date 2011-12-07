@@ -1,22 +1,34 @@
 Hacknet::Application.routes.draw do
+  devise_for :users
+
+  resources :finds
+  resource :identity
+  resources :messages
+  match '/chat' => 'demo#index'
+  match '/test' => 'demo#test_index'
+  match '/pusher/auth' => 'pusher#auth'
+
   get "posts/new"
 
   get "posts/show"
 
   get "posts/index"
+  get "autocomplete/users"
 
   get "posts/update"
 
   get "posts/destroy"
 
   resources :users
+  resource :finds
   resources :sessions
+  resources :autocomplete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+     match 'autocomplete/users/:term' => 'autocomplete#users'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

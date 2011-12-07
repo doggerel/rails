@@ -1,0 +1,32 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'devise';
+@mixin list-bullet{
+  list-style-type:none;
+}
+.header{
+  height: 75px;
+  background:#e0f4ff;
+  text-align:center;
+  border-bottom:1px solid #e5ffe0
+}
+.sub-header{
+  text-align:center;
+  background: #a3dfff;
+  height:50px;
+  margin-bottom:20px;
+  border-bottom:1px solid #ffe0f4
+}
+.user_post{
+  @include rounded-corners;
+  line-height:200%;
+  background: #fff;
+  padding:20px;
+  font:1em verdana, arial, sans-serif;
+  opacity:.90;
+}
+.post-results{
+  @include list-bullet
+
+}

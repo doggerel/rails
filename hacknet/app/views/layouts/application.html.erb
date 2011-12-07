@@ -2,9 +2,15 @@
 <html>
 <head>
   <title>Hacknet</title>
+<% if @use_local_js %>
+  <script src="http://localhost:5555/pusher.js"></script>
+<% else %>
+  <script src="<%= PUSHER_JS_DOMAIN %>/1.9/pusher.min.js"></script>
+<% end %>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+ 
 </head>
 <body>
   <div class="container">
@@ -17,7 +23,11 @@
       <%= flash_messages %>
     </div>
     <div class="span-9  quiet last sidebar">
-      fred
+      <%=form_tag finds_path, :method => :get do%>
+        <%=text_field_tag :search, params[:search],
+          :html=>{:id=>"autocomplete"}%>
+        <%= submit_tag "Search", :name=>nil %>
+      <% end %>
     </div>
     <div class="span-24 header footer quiet">
     </div>

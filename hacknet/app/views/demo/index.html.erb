@@ -1,0 +1,26 @@
+<div id="header">
+  <div id="fork-me"><a href="https://github.com/pusher/pusher-presence-demo">Fork me on GitHub</a></div>
+
+  <a class="pusher" href="http://pusherapp.com/"><img alt="Pusher" src=<%=image_tag("pusher.png")%>> </a>
+
+  <div id="controls">
+    <% if @identity.nil? %>
+      <h2>You are currently <em>anonymous</em></h2>
+      <form action="/identity" id="email" method="POST">
+        <input name="email" placeholder="Add your email to get a Gravatar" type="email">
+        <input type="submit" value="Add my Gravatar">
+      </form>
+    <% else %>
+      <h2>You're logged in as <em><%=h @identity[:email] %></em></h2>
+      <%= form_for :identity, :url => identity_path, :html => { :method => :delete } do |f| %>
+        <%= f.submit 'Remove my Gravatar' %>
+      <% end %>
+    <% end %>
+    <form action="/messages" id="message" method="POST">
+      <input name="text" placeholder="Say something">
+      <input type="submit" value="Send">
+    </form>
+  </div>
+</div>
+
+<div id="presence"></div>

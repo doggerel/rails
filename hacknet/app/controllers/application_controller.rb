@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  Pusher.app_id = '10912'
+  Pusher.key = '244a62c4217eb601c81d'
+  Pusher.secret = '576806e088ad76f7693e'
+  helper :all # include all helpers, all the time
   private
   def current_user
     @current_user ||=User.find(session[:user_id]) if session[:user_id]

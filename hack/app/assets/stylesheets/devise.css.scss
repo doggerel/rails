@@ -1,0 +1,41 @@
+$devise-input-box: #000;
+
+@mixin devise-form{
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  border:#c7ffdc;
+}
+@mixin devise-form-input{
+  background: $devise-input-box;
+  color: #eee;
+  padding: 4px;
+}
+@mixin rounded-corners{
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+.form-header{
+  height:75px;
+  @include rounded-corners;
+  @include devise-form;
+  background: #000;
+  color:#fff;
+  font:3em verdana, arial,sans-serif;
+  margin-bottom: 30px;
+  text-align:middle;
+}
+
+.sign-in{
+  @include devise-form;
+}
+.sign-in input{
+  @include devise-form-input;
+  @include rounded-corners;
+  padding-left:10px;
+  size: 50px;
+
+}
+.sign-in > a:link  {color:#fff;}

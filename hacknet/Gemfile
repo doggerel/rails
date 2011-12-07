@@ -1,8 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
+gem 'rails3-jquery-autocomplete'
+gem 'devise'
+# rails g devise:install
 gem 'will_paginate', :git => 'git@github.com:bridgeutopia/will_paginate.git', :branch => 'rails3'  
+gem 'sunspot_rails'
+gem 'pusher'
 gem 'blueprint-rails'
+gem 'em-http-request' # Required by trigger_async
+gem 'gravatar-ultimate'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
