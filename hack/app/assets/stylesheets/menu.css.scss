@@ -1,44 +1,48 @@
 @import 'devise';
-#centeredmenu {
-  float:left;
-  width:100%;
-  overflow:hidden;
-  position:relative;
+@mixin shadows {
+  -moz-box-shadow: -1px -1px 1px 1px #888;
+  -webkit-box-shadow: -1px -1px 1px 1px #888;
+  box-shadow: -1px -1px 1px 1px #888;
 }
-#centeredmenu ul {
+@mixin rounded-tops($pixels){
+  border-top-left-radius: $pixels; 
+  border-top-right-radius: $pixels;
+}
+.sub-header ul {
   clear:left;
   float:left;
   list-style:none;
-  margin:0;
-  padding:0;
   position:relative;
-  left:50%;
+  top:30px;
+  margin-left:15px;
+  padding:0;
   text-align:center;
 }
-#centeredmenu ul li {
+.sub-header ul li {
   display:block;
   float:left;
   list-style:none;
   margin:0;
   padding:0;
-  position:relative;
   right:50%;
 }
-#centeredmenu ul li a {
+.sub-header ul li a {
   display:block;
   margin:0 0 0 1px;
   padding:3px 10px;
-  background:#fff8c6;
-  color:#000;
+  background:#4d61ff;
+  color:#fff;
   text-decoration:none;
+  @include rounded-tops(7px);
   line-height:1.3em;
+  @include shadows;
 }
-#centeredmenu ul li a:hover {
-   background:#000;
-   color:#fff;
+.sub-header ul li a:hover {
+   background:#c7fff8;
+   color:#eee;
 }
-#centeredmenu ul li a.active,
-#centeredmenu ul li a.active:hover {
+.sub-header ul li a.active,
+.sub-header ul li a.active:hover {
    color:#fff;
    background:#000;
    font-weight:bold;

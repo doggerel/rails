@@ -1,11 +1,11 @@
 class TitlesController < ApplicationController
-  respond_to :js,:html,:xml,:json
+  respond_to :html, :js, :json, :xml
   def index
     @search = Post.search do
       fulltext params[:search]
     end
     @post = @search.results
-    respond_with(@post)
+    #render :js => "window.location = '/layouts/application'"
   end
 end
 

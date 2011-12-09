@@ -1,0 +1,11 @@
+<%=simple_form_for @post, :action=>'update' do |f|%>
+  <p>
+    <%= f.label :title %>
+    <%=f.text_field :title %>
+  </p>
+  <p>
+    <%=f.ckeditor :content,:label =>false,
+      :input_html => {:toolbar =>'Full'} %>
+      <%=f.button :submit  %>
+  </p>
+<%end%>

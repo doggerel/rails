@@ -1,0 +1,35 @@
+@import 'devise';
+@mixin main-content-format{
+  padding:15px;
+  margin: 20px;
+}
+body{
+  background: url('/assets/background.png');
+}
+.search-box{
+  float:right;
+}
+.header-image{
+  position:relative;
+  margin:0 auto;
+  float:right;
+}
+#main-content{
+  @include rounded-corners;
+  border:1px #ff6675 solid;
+  margin-top:20px;
+  padding:20px;
+  background:#fafffa;
+  color:#111;
+  opactiy:0.60;
+}
+#loading{
+  margin: 0 auto;
+  padding-left:50px;
+  
+}
+
+.search-div{
+  position:relative;
+  float:right;
+}

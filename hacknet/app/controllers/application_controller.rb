@@ -31,10 +31,16 @@ class ApplicationController < ActionController::Base
   def store_location
     session[:return_to] = request.fullpath
   end
+  def gravatar_for(user, options ={:size => 50})
+    gravatar_image_tag(user.email.downcase, :alt => user.email,
+                                            :class => 'gravatar',  
+                                            :gravatar => options)
+  end
 
   helper_method :current_user
   helper_method :current_user?
   helper_method :signed_in?
   helper_method :sign_in
   helper_method :authenticate
+  helper_method :gravatar_for
 end

@@ -5,19 +5,6 @@
 @mixin list-bullet{
   list-style-type:none;
 }
-.header{
-  height: 75px;
-  background:#e0f4ff;
-  text-align:center;
-  border-bottom:1px solid #e5ffe0
-}
-.sub-header{
-  text-align:center;
-  background: #a3dfff;
-  height:50px;
-  margin-bottom:20px;
-  border-bottom:1px solid #ffe0f4
-}
 .user_post{
   @include rounded-corners;
   line-height:200%;

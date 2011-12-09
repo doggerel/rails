@@ -6,9 +6,7 @@ class MicropostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @microposts = @user.microposts.paginate(:page => params[:page])
-
   end
-
   def create
       @post = params[:micropost]
       content = params[:micropost][:content]
@@ -26,6 +24,7 @@ class MicropostsController < ApplicationController
       end
     end
   end
+  
   def create_message(args)
     hash = Hash.new
     user_id = User.where(:handle => args[0])
@@ -42,14 +41,14 @@ class MicropostsController < ApplicationController
        flash[:error] = "there was a problem with your message"
        redirect_to user_path
      end
-    
-    
     #filler until later
   end
+  
   def destroy
     @micropost.destroy
     redirect_back_or root_path
   end
+  
   def show
     @post = Micropost.find(params[:id])
   end
@@ -73,7 +72,7 @@ class MicropostsController < ApplicationController
      if user.blank?
        no_user(content)
      else
-       return return_hash(user,hash)
+       return_hash(user,hash)
     end
   end
     
@@ -93,6 +92,5 @@ class MicropostsController < ApplicationController
     flash[:error] = "no user #{extract_handle(content).to_s} listed"
     return false
   end
-
-
 end
+

@@ -1,24 +1,14 @@
 Hack::Application.routes.draw do
   resources :titles
 
-  get "titles/index"
 
-  get "posts/index"
-
-  get "posts/show"
-
-  get "posts/destroy"
-
-  get "posts/new"
-
-  get "users/show"
-
-  get "users/index"
+  get "autocomplete/title"
 
   devise_for :users
   resources :posts
   resources :users
   resources :titles, :only =>[:index]
+  resources :autocomplete
   match 'posts/:id' =>'posts#show', :as=> :blog
 
   # The priority is based upon order of creation:
@@ -70,7 +60,7 @@ Hack::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'users#index'
+   root :to => 'posts#index'
 
   # See how all your routes lay out with "rake routes"
 

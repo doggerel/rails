@@ -3,13 +3,6 @@
     <%=label_tag 'search' %>
     <%=text_field_tag 'search'%>
   </div>
-  <div class="fields">
-    <%=label_tag 'search_tokens' %>
-    <%=text_field_tag 'search_tokens',
-      "data-pre"=>User.name.map(&:attributes).to_json
-  %>
-
-  </div>
   <div id="search_input">
   </div>
     <div class="submit"><%= submit_tag 'search' %></div>
