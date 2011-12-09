@@ -1,4 +1,6 @@
 Hack::Application.routes.draw do
+  get "archive/index"
+
   resources :titles
 
 
