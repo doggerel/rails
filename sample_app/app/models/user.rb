@@ -2,14 +2,14 @@ require 'digest'
 #include ActiveRecord::Transitions
 class User < ActiveRecord::Base
   acts_as_lucky
-include AASM
-attr_reader :search_tokens
+  include AASM
+  attr_reader :search_tokens
 #####Trick is to have a seperate controller to 
 #return autocomplete results is this case
 #the controller is searchings
- def search_tokens=(ids) 
-   self.search_ids = ids.split(",")
- end
+  def search_tokens=(ids) 
+    self.search_ids = ids.split(",")
+  end
   
   attr_accessor :password
   #=================Microposts========================

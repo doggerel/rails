@@ -1,0 +1,7 @@
+%ul
+  %li
+    =image_tag avatar_url(@user)
+  %li
+    =@user.name   
+    =link_to_unless(@user.posts.nil?, "#{@user.name} posts",
+      inspected_user_posts_path(@user), :remote=>true)

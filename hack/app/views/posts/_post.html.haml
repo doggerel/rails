@@ -1,10 +1,15 @@
 %ul.post-results
   %li
+  %li.post-title
     = image_tag avatar_url(current_user)
-  %li 
-    = post.title
+    =post.title
   %li
-    = post.content 
+    =raw post.content 
   %li
     = link_to image_tag('./icons/Trash.png',:size=>"30x30"), post, :method => :delete, :confirm =>"are you sure?", :title => post.title
-    = link_to image_tag('./icons/Edit.png',:size=>"30x30"), edit_post_path(post), :title => post.title
+    = link_to image_tag('./icons/Edit.png',:size=>"30x30"), edit_post_path(post), :title => post.title   
+    %span.comment-link
+      = link_to 'comment', new_comment_path(:post=>post), :remote=>true
+- row_class=cycle("comment-odd","comment-even")
+%ul.list-container
+  = render @comment unless @comment.blank?    

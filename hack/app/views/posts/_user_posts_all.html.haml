@@ -1,0 +1,7 @@
+-row_class = cycle("comment-even","comment-odd")
+
+%ul
+  -# = css in user.css.scss
+  %li{:class=>"#{row_class} user-posts"}
+    =link_to "#{user_posts_all.title}", posted_title_path(:title=>user_posts_all.id) 
+

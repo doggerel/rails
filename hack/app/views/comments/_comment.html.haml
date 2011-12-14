@@ -1,0 +1,13 @@
+- row_class=cycle("comment-odd","comment-even")
+%li.list-title-item
+  .comment-list-header 
+    .gravatar-image-container
+      =image_tag(avatar_url(current_user),:size=>"30x30")
+    .user-name-container
+      comments by
+      = link_to comment.user.name, user_path(comment.user)
+      
+    =time_ago_in_words(comment.created_at) 
+    ago. 
+%li{:class=>"#{row_class} comment-list"}
+  = comment.comment

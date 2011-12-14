@@ -1,0 +1,8 @@
+<script type="text/javascript">
+  bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });       
+</script>
+<%=form_for @comment do |f|%>
+  <%= f.text_area :comment,:toolbar=>'Full'  %>
+  <%=f.hidden_field :post, :value=>post%>
+  <%= f.submit :submit %>
+<%end %>

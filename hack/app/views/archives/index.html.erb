@@ -1,0 +1,13 @@
+<% @posts_by_month.each do |monthname, posts| %>
+  <p class="month-archive">
+    <%= monthname %>
+  </p>
+     <div class="archive">
+    <ul class="archive">
+    <% posts.each do |post| %>
+    <li class="archive"><p class="archive-post"><%= post.title %></p></li>
+    <% end %>
+    <%end%>
+    </ul>
+</div>
+

@@ -33,3 +33,64 @@ body{
   position:relative;
   float:right;
 }
+@mixin comment-list{
+  list-style-type:none;
+}
+.list-container{
+}
+.comment-list{
+  @include comment-list;
+  padding-left:8px;
+  margin-bottom:20px;
+  color:#003d7a;
+  min-height:100px;
+}
+.comment-odd{
+  @include comment-list;
+  background: #e0fff0;
+}
+.comment-even{
+  background: #e0ffff;
+}
+.comment-link a{
+  text-decoration:none;
+
+  color:#ccc;
+}
+.spacer{
+  height:20px;
+  background:#000;
+  border-top:yellow 1px solid;
+}
+.comment-list-header{
+  background :#adffaf;
+  float:right;
+  opacity: 0.60;
+  min-width:580px;
+  text-align:right;
+  list-style-type:none;
+
+}
+.list-title-item{
+  list-style-type:none;
+}
+.gravatar-image-container{
+  position: relative;
+  float:left;
+}
+.user-name-container{
+  margin-left:0;
+  margin-right:0;
+  text-align: center ;
+}
+
+.user-posts{
+  list-style-type: none;
+}
+.user-post a{
+  text-decoration: none;
+}
+.user-post a:hover{
+  background: yellow;
+}
+

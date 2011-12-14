@@ -5,38 +5,36 @@
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+  <%= javascript_include_tag 'nicEdit' -%>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container">
-    <div class="span-24 header last"</div>
-    <div class="header-image"><!--hack.css.scss-->
-      <%= image_tag 'blogaholic.png' %>
-    </div>
-      <% if user_signed_in? %>
-        <div class ="search-box"> <!--hack.css.scss-->
+    <div class="span-24 header last">
+      <div class="header-image"><!--hack.css.scss-->
+        <%= image_tag 'blogaholic.png' %>
       </div>
-      <%end %>
-    </div>
-    <div class="span-24 sub-header last">
-      <%if  user_signed_in?%>
-        <%= render 'layouts/menu' %>
-        <%= render 'shared/search' %> 
-      <%end  %>
-    </div>
+        <% if user_signed_in? %>
+          <div class ="search-box"> <!--hack.css.scss-->
+        </div>
+        <%end %>
+      </div>
+      <div class="span-24 sub-header last">
+        <%if  user_signed_in?%>
+          <%= render 'layouts/menu' %>
+          <%= render 'shared/search' %> 
+        <%end  %>
+      </div>
     <div id="main-content"  class="span-16 lighten"><!--main-content in hack.css.scss-->
        <% flash.each do |key, value|%>
            <div class="flash <%=key%>"><%=value%></div>
         <%end%>
-
       <%= yield %>
     </div>
 
     <div class="span-6 last">
-      fred
     </div>
-  <div>
+  </div>
 
 
 </body>

@@ -15,5 +15,8 @@
 }
 .post-results{
   @include list-bullet
-
+}
+.post-title{
+  font-weight: bold;
+  font-stretch:semi-expanded;
 }

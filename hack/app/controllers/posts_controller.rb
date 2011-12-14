@@ -3,7 +3,9 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @post = current_user.posts.last
+    @comment =  Comment.where(:post_id => @post).all
   end
+
   def show
     @post = Post.find(params[:id])
     respond_with(:js)
@@ -12,7 +14,15 @@ class PostsController < ApplicationController
      @post = Post.find(params[:id])
      @title = 'Edit Post'
    end
-  def update
+   def user_posts_all
+     @user = User.find(params[:id])
+     @posts = @user.posts.all
+   end
+   def post_by_title
+     @post = Post.find(params[:id]) 
+   end
+  
+   def update
     @post = Post.find(params[:id])
     @post.update_attributes(params[:post])
     flash[:success] ="your post #{@post.title} has been successfully updated"

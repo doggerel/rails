@@ -1,0 +1,19 @@
+<% title "Comments" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Post</th>
+    <th>Comment</th>
+  </tr>
+  <% for comment in @comments %>
+    <tr>
+      <td><%= comment.user_id %></td>
+      <td><%= comment.post_id %></td>
+      <td><%= comment.comment %></td>
+      <td><%= link_to "Edit", edit_comment_path(comment) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Comment", new_comment_path %></p>

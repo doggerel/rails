@@ -1,0 +1,7 @@
+<% title "New Comment" %>
+<%= simple_form_for @comment do |f|%>
+<%=f.error_messages  %>
+<%=f.input :comment  %>
+<%=f.hidden_field :post, :value=>@post%>
+<%=f.button :submit%>
+<% end %>

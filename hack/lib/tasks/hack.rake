@@ -38,6 +38,19 @@ end
        end
       end
     end
+    def make_comments
+      users = User.all
+      posts = Post.all
+      u = users[1..5]
+      p = posts[90..99]
+
+    u.product(p).each do |post,user|
+        99.times do |n| 
+         comment = Faker::Lorem.sentence(5)
+         post.comments.create!(:comment=>comment, :user_id=>user.id)
+       end
+      end
+    end
 
     def make_relationships
       users = User.all

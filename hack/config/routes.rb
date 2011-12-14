@@ -1,5 +1,9 @@
 Hack::Application.routes.draw do
-  get "archive/index"
+
+  resources :comments
+
+  get "archives/index"
+  get "posts/post_by_title"
 
   resources :titles
 
@@ -11,7 +15,10 @@ Hack::Application.routes.draw do
   resources :users
   resources :titles, :only =>[:index]
   resources :autocomplete
+  resources :routes
   match 'posts/:id' =>'posts#show', :as=> :blog
+  match 'posts/user_posts_all/:id' => 'posts#user_posts_all', :as => :inspected_user_posts
+  match 'posts/post_by_title/:id' =>'posts#post_by_title', :as => :posted_title
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
