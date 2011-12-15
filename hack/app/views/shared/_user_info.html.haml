@@ -1,1 +1,5 @@
-= current_user.name unless current_user.nil?
+-unless current_user.nil?
+  =image_tag avatar_url(current_user),:size=>"20x20"
+  = current_user.name unless current_user.nil?
+  %ul.sidebar-list
+    =render :partial => 'shared/user_post', :collection => Post.where(:user_id=>current_user).limit(5)

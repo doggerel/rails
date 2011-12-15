@@ -1,4 +1,25 @@
+@import "mixin";
 .side-bar{
-  border: 1px solid black;
-  background: #CCC;
+  margin-top:20px;
+  min-height:400px;
+  @include rounded-corners;
+  padding:8px;
+  color:#FFF;
+  font-family: 'Pompiere', cursive;
+  font-size: 1.4em;
+  @include shadows;
+  @include textShadow;
+  @include gradient(#ffe4d6,#ffb18a)
+}
+
+.sidebar-list{
+  margin-top:20px;
+  
+}
+.sidebar-links a{
+  text-shadow:none !important;
+  font-family:verdana;
+  text-decoration:none;
+  font-size:0.7em;
+  color:#29b8ff;
 }

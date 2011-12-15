@@ -1,4 +1,4 @@
-@import 'devise';
+@import 'mixin';
 @mixin shadows {
   -moz-box-shadow: -1px -1px 1px 1px #888;
   -webkit-box-shadow: -1px -1px 1px 1px #888;
@@ -30,12 +30,10 @@
   display:block;
   margin:0 0 0 1px;
   padding:3px 10px;
-  background:#4d61ff;
   color:#fff;
   text-decoration:none;
-  @include rounded-tops(7px);
   line-height:1.3em;
-  @include shadows;
+  @include inset-text;
 }
 .sub-header ul li a:hover {
    background:#c7fff8;

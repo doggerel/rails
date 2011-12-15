@@ -1,4 +1,5 @@
 @import 'devise';
+@import 'mixin';
 @mixin main-content-format{
   padding:15px;
   margin: 20px;
@@ -16,11 +17,13 @@ body{
 }
 #main-content{
   @include rounded-corners;
-  border:1px #ff6675 solid;
+  /*border:1px #ff6675 solid;*/
   margin-top:20px;
+  min-height:400px;
   padding:20px;
   background:#fafffa;
   color:#111;
+  @include shadows;
   opactiy:0.60;
 }
 #loading{
@@ -93,8 +96,8 @@ body{
 .user-post a:hover{
   background: yellow;
 }
-.side-bar{
-  border:1px;
-  background:#CCC;
-  min-height:600px
+.first-letter{
+  font-size:1.5em;
+  color: #66ccff;
+  font-family:'verdana';
 }

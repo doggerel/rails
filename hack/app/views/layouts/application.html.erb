@@ -1,19 +1,31 @@
 <!DOCTYPE html>
+<!-->gentle-mountain-4084-->
 <html>
 <head>
   <title>Hack</title>
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag 'nicEdit' -%>
+  <%= javascript_include_tag 'nicEdit' %>
+      <link href='http://fonts.googleapis.com/css?family=Pompiere|Sue+Ellen+Francisco|Amatic+SC|Montserrat' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container">
     <div class="span-24 header last">
-      <div class="header-image"><!--hack.css.scss-->
-        <%= image_tag 'blogaholic.png' %>
-      </div>
+        <span class="cursive">
+          Praxis 
+        </span>
+        <span class="first-letter">
+          D
+        </span>
+        <span class="noncursive">
+          evelopment
+        </span>
+        <span class="bracket"> 
+          lambda{...}
+        </span>
+
         <% if user_signed_in? %>
           <div class ="search-box"> <!--hack.css.scss-->
         </div>
@@ -32,7 +44,7 @@
       <%= yield %>
     </div>
 
-    <div class="span-6 last">
+    <div class="span-6 last side-bar">
       <%= render 'shared/user_info' %>
     </div>
   </div>

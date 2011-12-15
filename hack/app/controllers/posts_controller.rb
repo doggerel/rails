@@ -8,7 +8,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    respond_with(:js)
+    respond_to do |f|
+      f.html
+      f.js
+    end
   end
    def edit
      @post = Post.find(params[:id])
