@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
     text :title
   end
   
-  def self.return_title(post)
+  def return_title(post)
     self.where(:title=>post)
   end
 

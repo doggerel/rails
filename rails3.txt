@@ -204,6 +204,10 @@ class AddEmailUniquenessIndex < ActiveRecord::Migration
   end
 end
 
+ROLLBACK MIGRATION
+++++++++++++++++++
+rake db:rollback
+
 RESET THE DATABASE
 =======================
 rake db:reset

@@ -9,12 +9,12 @@ namespace :db do
 end
 
     def make_users
-         User.create!(:name => "Example User",
-                     :email => 
-                      "gritty@sympatico.ca",
-                     :handle => "grit",
+         User.create!(
+                     :email => "gritty@sympatico.ca",
                      :name => "Fred Hudson",
-                     :password => "password"
+                     :password => "password",
+                     :admin => true,
+                     :handle => "grit"
                     )
                 
       99.times do |n|
@@ -29,6 +29,7 @@ end
         )
       end
     end
+    
     def make_posts
       User.all(:limit => 50).each do |user|
         99.times do |n| 

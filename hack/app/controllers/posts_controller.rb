@@ -30,8 +30,13 @@ class PostsController < ApplicationController
     @post.update_attributes(params[:post])
     flash[:success] ="your post #{@post.title} has been successfully updated"
     redirect_to root_path
-
   end
+   def return_post
+     @post = Post.find(params[:id])
+     respond_to do |f|
+       f.js
+     end
+   end
   def destroy
     Post.find(params[:id]).destroy
     flash[:success] = "User destroyed."
