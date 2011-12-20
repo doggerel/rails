@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   
      respond_to do |f| 
+        f.html
         f.js{@post = params[:post]
         }
      end

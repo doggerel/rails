@@ -1,2 +1,2 @@
 %li.sidebar-links
-  =link_to_unless user_post.blank?, user_post.title,post_path(user_post.id)
+  =link_to_unless user_post.blank?, snippet(user_post.title,4),post_path(user_post.id)

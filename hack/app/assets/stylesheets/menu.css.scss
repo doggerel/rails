@@ -30,18 +30,11 @@
   display:block;
   margin:0 0 0 1px;
   padding:3px 10px;
-  color:#fff;
   text-decoration:none;
   line-height:1.3em;
-  @include inset-text;
 }
-.sub-header ul li a:hover {
-   background:#c7fff8;
-   color:#eee;
-}
+
 .sub-header ul li a.active,
 .sub-header ul li a.active:hover {
-   color:#fff;
-   background:#000;
-   font-weight:bold;
+   border-bottom:#fff solid 5px;
  }

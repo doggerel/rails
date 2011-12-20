@@ -7,6 +7,7 @@ $bottom-header-border: #ffc7cd;
 .sub-header{
   text-align:center;
   @include gradient(#75D1FF,#F0FAFF);
+  text-indent:14px;
   height:50px;
   border-bottom:6px solid $bottom-header-border;
 }

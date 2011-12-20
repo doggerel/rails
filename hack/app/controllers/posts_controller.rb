@@ -5,6 +5,9 @@ class PostsController < ApplicationController
     @post = current_user.posts.last
     @comment =  Comment.where(:post_id => @post).all
   end
+  def new
+    @post = Post.new
+  end
 
   def show
     @post = Post.find(params[:id])
@@ -13,9 +16,18 @@ class PostsController < ApplicationController
       f.js
     end
   end
+
    def edit
      @post = Post.find(params[:id])
      @title = 'Edit Post'
+   end
+   def create
+     @post = Post.new(params[:post])
+     if @post
+       render root_path
+     else
+       flash[:error] = "there was a problem creating your post"
+     end
    end
    def user_posts_all
      @user = User.find(params[:id])
@@ -32,14 +44,13 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
    def return_post
-     @post = Post.find(params[:id])
      respond_to do |f|
-       f.js
+      f.js{@post = Post.find(params[:id])}
      end
    end
   def destroy
     Post.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
+    flash[:success] = "Post destroyed."
     redirect_to posts_path
   end
 

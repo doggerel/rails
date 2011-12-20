@@ -1,6 +1,7 @@
 class Ability
   include CanCan::Ability
   def initialize(user)
+=begin    
     user ||=User.new
     if user.role? :administrator
       can :mange, :all
@@ -9,6 +10,7 @@ class Ability
     else
       can :read, :all
     end
+=end    
     
   end
 end

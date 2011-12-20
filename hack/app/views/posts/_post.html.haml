@@ -5,7 +5,8 @@
     =post.title
   %li#full-post
     =raw snippet(post.content,20)  
-    =link_to "read more", full_post_path(post), :remote=>true
+    %span.full-post-link
+      =link_to "read more", full_post_path(post), :remote=>true
   %li
     = link_to image_tag('./icons/Trash.png',:size=>"30x30"), post, :method => :delete, :confirm =>"are you sure?", :title => post.title
     = link_to image_tag('./icons/Edit.png',:size=>"30x30"), edit_post_path(post), :title => post.title   

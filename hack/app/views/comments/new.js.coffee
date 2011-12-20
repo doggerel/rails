@@ -1,6 +1,4 @@
-$("#main-content").append('<%= escape_javascript(render(:partial => "comment_form",
-  :locals=>{:post => @post}))%>')
+$("#main-content").html('<%=escape_javascript(render(:partial => "comment_form"))%>')
   .hide()
-  .fadeIn()
-$('#search')[0].reset()
+  .slideIn()
 

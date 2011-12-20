@@ -7,7 +7,7 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag 'nicEdit' %>
-      <link href='http://fonts.googleapis.com/css?family=Pompiere|Sue+Ellen+Francisco|Amatic+SC|Montserrat' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Pompiere|Sue+Ellen+Francisco|Amatic+SC|Montserrat' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -37,17 +37,39 @@
           <%= render 'shared/search' %> 
         <%end  %>
       </div>
-    <div id="main-content"  class="span-16 lighten"><!--main-content in hack.css.scss-->
+    <div id="main-content"  class="span-14 lighten"><!--main-content in hack.css.scss-->
        <% flash.each do |key, value|%>
            <div class="flash <%=key%>"><%=value%></div>
         <%end%>
       <%= yield %>
     </div>
 
-    <div class="span-6 last side-bar">
+    <div class="span-8 last side-bar">
       <%= render 'shared/user_info' %>
+        <% @post = Post.where(:user_id =>current_user)
+        .order("created_at DESC").limit(5)
+        .group_by{|ar| ar.created_at.strftime "%Y %b" }
+        %>
+        <%@post.each do |date_str, post_for_month| %>
+      <div class="user-posts-header">
+          <b><%= date_str %></b>
+
+              post count <%=post_for_month.count%>
+          <br>
+      </div>
+        <div class= "user-posts">
+        <ul>
+          <% post_for_month.each do |post| %> 
+            <li>
+               
+              <%= link_to(snippet(post.title,4), post_path(post)) %>
+          </li> 
+          <% end %>
+        </ul>
+       <% end %>
+       </div>
     </div>
-  </div>
+</div>
 
 
 </body>

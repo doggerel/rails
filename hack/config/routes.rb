@@ -1,11 +1,14 @@
 Hack::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :roles
 
   resources :comments
 
   get "archives/index"
   get "posts/post_by_title"
+  
 
   resources :titles
 
@@ -21,7 +24,7 @@ Hack::Application.routes.draw do
   match 'posts/:id' =>'posts#show', :as=> :blog
   match 'posts/user_posts_all/:id' => 'posts#user_posts_all', :as => :inspected_user_posts
   match 'posts/post_by_title/:id' =>'posts#post_by_title', :as => :posted_title
-  match 'posts/full_post/:id' =>"posts#full_post", :as => :full_post
+  match 'posts/return_post/:id' =>"posts#return_post", :as => :full_post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
