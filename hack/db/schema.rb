@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111219182351) do
+ActiveRecord::Schema.define(:version => 20111220220459) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -66,6 +66,17 @@ ActiveRecord::Schema.define(:version => 20111219182351) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["followed_id"], :name => "index_Relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], :name => "index_Relationships_on_follower_id_and_followed_id", :unique => true
+  add_index "relationships", ["follower_id"], :name => "index_Relationships_on_follower_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

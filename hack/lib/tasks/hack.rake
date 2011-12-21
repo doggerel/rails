@@ -5,6 +5,7 @@ namespace :db do
       Rake::Task['db:reset'].invoke
       make_users
       make_posts
+      make_relationships
     end
 end
 
@@ -13,7 +14,7 @@ end
                      :email => "gritty@sympatico.ca",
                      :name => "Fred Hudson",
                      :password => "password",
-                     :admin => true,
+                     :admin => 1,
                      :handle => "grit"
                     )
                 

@@ -5,7 +5,7 @@
   margin: 20px;
 }
 body{
-  background: url('/assets/background.png');
+  /*background: url('/assets/carbon.png');*/
 }
 .search-box{
   float:right;
@@ -21,6 +21,8 @@ body{
   margin-top:20px;
   min-height:400px;
   padding:20px;
+  font-size:1.2em;
+  font-family: Arial, Helvetica, sans-serif;
   background:#fafffa;
   color:#111;
   @include shadows;
@@ -73,7 +75,14 @@ body{
   min-width:540px;
   text-align:right;
   list-style-type:none;
-
+}
+.comment-list-header a{
+  font-style:italic;
+  text-decoration:none
+}
+.comment-list-header a:hover{
+  font-size:1.2em;
+  color: yellow;
 }
 .list-title-item{
   list-style-type:none;
@@ -101,4 +110,9 @@ body{
   font-size:1.5em;
   color: #66ccff;
   font-family:'verdana';
+}
+.user-stats{
+  font-style:italic;
+  padding:8px;
+  color: #ff2428;
 }

@@ -3,6 +3,7 @@ $bottom-header-border: #ffc7cd;
 .header{
   height: 75px;
   @include gradient(#F0FAFF,#75D1FF);
+  text-indent:8px;
 }
 .sub-header{
   text-align:center;

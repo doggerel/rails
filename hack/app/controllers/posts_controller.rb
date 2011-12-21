@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
   def new
     @post = Post.new
+    respond_with(:html)
   end
 
   def show

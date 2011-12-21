@@ -8,12 +8,14 @@ Hack::Application.routes.draw do
 
   get "archives/index"
   get "posts/post_by_title"
+  get "users/followers"
   
 
   resources :titles
 
 
   get "autocomplete/title"
+
 
   devise_for :users
   resources :posts
@@ -25,6 +27,7 @@ Hack::Application.routes.draw do
   match 'posts/user_posts_all/:id' => 'posts#user_posts_all', :as => :inspected_user_posts
   match 'posts/post_by_title/:id' =>'posts#post_by_title', :as => :posted_title
   match 'posts/return_post/:id' =>"posts#return_post", :as => :full_post
+  match 'users/followers/:id' => "users#followers", :as => :followers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -32,6 +35,11 @@ Hack::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

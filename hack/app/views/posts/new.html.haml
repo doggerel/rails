@@ -1,8 +1,6 @@
-=simple_form_for @post do |f|
-  =f.error_message
-  =f.label :title
-  =f.input :title
-  =f.label :post
-  =f.text_area :post
-  =f.button :submit
+= simple_form_for :post  do |f|
+  = f.input :title
+  = f.label :post
+  = f.cktext_area :content
+  = f.button :submit
 

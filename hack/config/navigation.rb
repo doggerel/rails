@@ -51,6 +51,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :key_1, 'Home', posts_path 
     primary.item :key_2, 'Users', users_path 
+    primary.item :key_3, 'Post', new_post_path 
+    primary.item :key_4, 'Admin', rails_admin_path, :unless=> Proc.new{current_user.admin?}
+    primary.dom_class = 'menu-class'
 
     # Add an item which has a sub navigation (same params, but with block)
       # Add an item to the sub navigation (same params again)
@@ -64,8 +67,8 @@ SimpleNavigation::Configuration.run do |navigation|
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
-    # primary.dom_id = 'menu-id'
-    # primary.dom_class = 'menu-class'
+     #primary.dom_id = 'menu-id'
+     #primary.dom_class = 'menu-class'
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false
