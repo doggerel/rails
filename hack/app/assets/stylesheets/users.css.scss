@@ -4,4 +4,25 @@
 .user-posts{
   list-style-type: none;
 }
+.user-list ul{
+  margin-top:50px;
+}
+.user-list ul li{
+  list-style-type:none;
+  text-align:left;
+
+}
+.user-list-hr{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:200px;
+}
+.user-list-odd{
+  opacity:.80;
+  background:#CCc;
+
+}
+.user-list-even{
+  background:#eff;
+}
 

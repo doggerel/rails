@@ -1,0 +1,7 @@
+-user_row_class = cycle("user-list-even","user-list-odd")
+.digg_pagination
+  =will_paginate
+.user-list
+  %br   
+    %ul{:class=>"#{user_row_class}"}
+      =render(:partial=>'index', :collection=>@users, :spacer_template=>"spacer")

@@ -1,0 +1,24 @@
+%li{:class=>"row_class"}
+  =image_tag avatar_url(index)
+  =index.name
+%li{:class=>"row_class"}
+  =index.email
+%li{:class=>"row_class"}
+  has been a member for 
+  =time_ago_in_words index.created_at
+%li{:class=>"row_class"}
+  has been a member since
+  =index.created_at
+%li{:class=>"row_class"}
+  has posted
+  =index.posts.count 
+  times
+%li{:class=>"row_class"}
+  has received  
+  =index.comments.count
+  comments
+%li{:class=>"row_class"}
+  user name
+  =index.handle
+
+
